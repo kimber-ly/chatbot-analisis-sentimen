@@ -1,0 +1,29 @@
+version: "3.1"
+
+intents:
+  - greet
+  - analyze_sentiment
+
+entities:
+  - category
+
+slots:
+  category:
+    type: text
+
+responses:
+  utter_greet:
+  - text: "Halo, saya adalah Chatbot Analisis Sentimen. Ada yang bisa saya bantu?"
+
+  utter_ask_category:
+  - text: "Kategori apa yang ingin dianalisis? (teknologi, kuliner, fashion, lifestyle, properti, transportasi)"
+
+  utter_analyze_sentiment:
+  - text: "Berikut adalah hasil analisis sentimen:"
+
+  utter_goodbye:
+  - text: "Senang membantu Anda. Selamat berjumpa di lain kesempatan."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

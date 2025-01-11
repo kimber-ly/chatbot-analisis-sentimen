@@ -1,0 +1,22 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - halo
+    - hai
+    - hi
+    - apa kabar?
+
+- intent: analyze_sentiment
+  examples: |
+    - lakukan analisis sentimen
+    - analisis sentimen kategori teknologi
+    - analisis sentimen kuliner
+    - bagaimana sentimen fashion?
+    - bagaimana pendapat orang-orang tentang transportasi?
+
+- intent: goodbye
+  examples: |
+    - terima kasih
+    - bye
