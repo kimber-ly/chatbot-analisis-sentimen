@@ -3,26 +3,47 @@ version: "3.1"
 intents:
   - greet
   - analyze_sentiment
+  - recommendations
 
 entities:
-  - category
+  - topic
+  - aspects
+  - date
 
 slots:
-  category:
+  topic:
+    type: text
+  aspects:
     type: text
 
 responses:
   utter_greet:
   - text: "Halo, saya adalah Chatbot Analisis Sentimen. Ada yang bisa saya bantu?"
 
-  utter_ask_category:
-  - text: "Kategori apa yang ingin dianalisis? (teknologi, kuliner, fashion, lifestyle, properti, transportasi)"
+  utter_explain:
+  - text: "Saya bisa melakukan analisis sentimen dan memberikan rekomendasi ide bisnis atau strategi pemasaran."
+
+  utter_starting_point:
+  - text: "Kita bisa mulai dengan analisis sentimen. Kategori apa yang ingin dianalisis? (teknologi, kuliner, fashion, lifestyle, properti, transportasi)"
 
   utter_analyze_sentiment:
   - text: "Berikut adalah hasil analisis sentimen:"
 
+  utter_give_recommendations:
+  - text: "Berikut adalah beberapa rekomendasi yang dapat saya berikan:"
+
+  utter_without_sentiment:
+  - text: "Maaf, Anda harus melakukan analisis sentimen terlebih dahulu untuk mendapatkan rekomendasi."
+
   utter_goodbye:
   - text: "Senang membantu Anda. Selamat berjumpa di lain kesempatan."
+
+  utter_default:
+  - text: "Maaf, saya tidak mengerti. Tolong ulangi dengan bahasa Indonesia yang baik dan benar."
+
+actions:
+  - action_analyze_sentiment
+  - action_give_recommendations
 
 session_config:
   session_expiration_time: 60

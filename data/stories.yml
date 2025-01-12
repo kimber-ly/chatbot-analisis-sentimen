@@ -2,10 +2,35 @@ version: "3.1"
 
 stories:
 
-- story: greet and analyze sentiment
+# - story: sentiment analysis
+#   steps:
+#   # user
+#   - intent: analyze_sentiment
+#   # chatbot
+#   - action: utter_analyze_sentiment
+#   - action: action_analyze_sentiment
+
+# - story: recommendations
+#   steps:
+#   # user
+#   - intent: recommendations
+#   # chatbot
+#   - action: utter_give_recommendations
+#   - action: action_give_recommendations
+
+- story: greet, explain, analyze sentiment, recommendations, goodbye
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: ask
+  - action: utter_explain
+  - intent: ask_start
+  - action: utter_starting_point
   - intent: analyze_sentiment
   - action: utter_analyze_sentiment
   - action: action_analyze_sentiment
+  - intent: recommendations
+  - action: utter_give_recommendations
+  - action: action_give_recommendations
+  - intent: goodbye
+  - action: utter_goodbye

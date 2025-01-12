@@ -8,6 +8,16 @@ nlu:
     - hi
     - apa kabar?
 
+- intent: ask
+  examples: |
+   - chatbot analisis sentimen?
+   - apa maksudnya chatbot analisis sentimen?
+   - apa yang bisa kamu lakukan?
+  
+- intent: ask_start
+  examples: |
+  - aku harus mulai dari mana?
+
 - intent: analyze_sentiment
   examples: |
     - lakukan analisis sentimen
@@ -15,8 +25,20 @@ nlu:
     - analisis sentimen kuliner
     - bagaimana sentimen fashion?
     - bagaimana pendapat orang-orang tentang transportasi?
+    - bisakah kamu analisis sentimen kategori properti?
+    - bagaimana opini orang tentang lifestyle?
+    - analisis sentimen transportasi, tolong
+
+- intent: recommendations
+  examples: |
+    - berikan rekomendasi ide bisnis
+    - tolong berikan rekomendasi strategi pemasaran
+    - apa saja ide bisnis yang bagus?
+    - bagaimana strategi pemasarannya?
+    - tolong berikan beberapa strategi pemasaran
 
 - intent: goodbye
   examples: |
     - terima kasih
+    - selamat tinggal
     - bye
