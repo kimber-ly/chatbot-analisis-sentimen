@@ -11,10 +11,11 @@ entities:
   - date
 
 slots:
-  topic:
-    type: text
-  aspects:
-    type: text
+  data:
+    type: any
+    mappings:
+    - type: custom
+      action: action_cari_data
 
 responses:
   utter_greet:
@@ -42,8 +43,11 @@ responses:
   - text: "Maaf, saya tidak mengerti. Tolong ulangi dengan bahasa Indonesia yang baik dan benar."
 
 actions:
+  - action_cari_data
   - action_analyze_sentiment
+  - action_visualisasi
   - action_give_recommendations
+  - action_send_response
 
 session_config:
   session_expiration_time: 60
