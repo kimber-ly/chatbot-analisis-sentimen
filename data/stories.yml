@@ -27,10 +27,14 @@ stories:
   - intent: ask_start
   - action: utter_starting_point
   - intent: analyze_sentiment
+  - action: action_cari_data
   - action: utter_analyze_sentiment
   - action: action_analyze_sentiment
+  - action: action_visualisasi
+  - action: action_send_response
   - intent: recommendations
   - action: utter_give_recommendations
   - action: action_give_recommendations
+  - action: action_send_response
   - intent: goodbye
   - action: utter_goodbye

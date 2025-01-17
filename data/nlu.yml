@@ -16,18 +16,29 @@ nlu:
   
 - intent: ask_start
   examples: |
-  - aku harus mulai dari mana?
+    - aku harus mulai dari mana?
+    - bagaimana cara memulai?
+    - apa langkah pertama yang harus saya lakukan?
 
 - intent: analyze_sentiment
   examples: |
-    - lakukan analisis sentimen
-    - analisis sentimen kategori teknologi
-    - analisis sentimen kuliner
-    - bagaimana sentimen fashion?
-    - bagaimana pendapat orang-orang tentang transportasi?
-    - bisakah kamu analisis sentimen kategori properti?
-    - bagaimana opini orang tentang lifestyle?
-    - analisis sentimen transportasi, tolong
+    - analisis sentimen kategori [teknologi](topic)
+    - analisis sentimen [kuliner](topic)
+    - bagaimana sentimen [fashion](topic)?
+    - bagaimana pendapat orang-orang tentang [transportasi](topic)?
+    - bisakah kamu analisis sentimen kategori [properti](topic)?
+    - bagaimana opini orang tentang [lifestyle](topic)?
+    - tolong analisis sentimen tentang [teknologi](topic)
+    - coba analisis sentimen tentang [kuliner](topic)
+
+- lookup: topic
+  examples: |
+    - teknologi
+    - kuliner
+    - fashion
+    - lifestyle
+    - properti
+    - transportasi
 
 - intent: recommendations
   examples: |

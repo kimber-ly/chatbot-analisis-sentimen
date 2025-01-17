@@ -10,6 +10,7 @@
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
+from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 #
 #
@@ -26,10 +27,49 @@ from rasa_sdk.executor import CollectingDispatcher
 
 #         return []
 
-class ActionAnalisisSentimen(Action):
+class ActionCariData(Action):
+    def name(self) -> str:
+        return "action_cari_data"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        topic = tracker.get_slot("topic")
+        dispatcher.utter_message(text = f"Mencari data untuk topik {topic}...")
+        return []
+
+class Sentimen(Action):
     def name(self) -> str:
         return "action_analyze_sentiment"
     
-    def run(self, dispatcher: CollectingDispatcher) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(template="utter_analyze_sentiment")
-        return[]
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        topic = tracker.get_slot("topic")
+
+        # dispatcher.utter_message(template="utter_analyze_sentiment")
+        dispatcher.utter_message(text = f"Berikut adalah hasil analisis sentimen untuk topik {topic}")
+        return [SlotSet("topic", topic), SlotSet("sentiment_analysis", "true")]
+    
+class Visualisasi(Action):
+    def name(self) -> str:
+        return "action_visualisasi"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        topic = tracker.get_slot("topic")
+        dispatcher.utter_message(text = f"Melakukan visualisasi untuk hasil analisis sentimen topik {topic}")
+        return []
+
+class Rekomendasi(Action):
+    def name(self) -> str:
+        return "action_give_recommendations"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        topic = tracker.get_slot("topic")
+        sentiment_analysis = tracker.get_slot("sentiment_analysis")
+        dispatcher.utter_message(text = f"Berikut adalah rekomendasi untuk topik {topic}")
+        return []
+
+class SendResponse(Action):
+    def name(self) -> str:
+        return "action_send_response"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text = "Mengirimkan respons ke anda...")
+        return []
