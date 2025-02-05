@@ -1,0 +1,6 @@
+[
+  {
+    "name": "topic",
+    "pattern": "(\\bteknologi\\b|\\bkuliner\\b|\\bfashion\\b|\\blifestyle\\b|\\bproperti\\b|\\btransportasi\\b)"
+  }
+]

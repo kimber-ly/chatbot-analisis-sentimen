@@ -1,0 +1,31 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask\"}}]": "utter_explain",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask\"}}, {\"prev_action\": {\"action_name\": \"utter_explain\"}, \"user\": {\"intent\": \"ask\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recommendations\"}}]": "utter_give_recommendations",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recommendations\"}}, {\"prev_action\": {\"action_name\": \"utter_give_recommendations\"}, \"user\": {\"intent\": \"recommendations\"}}]": "action_give_recommendations",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recommendations\"}}, {\"prev_action\": {\"action_name\": \"utter_give_recommendations\"}, \"user\": {\"intent\": \"recommendations\"}}, {\"prev_action\": {\"action_name\": \"action_give_recommendations\"}, \"user\": {\"intent\": \"recommendations\"}}]": "action_send_response",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recommendations\"}}, {\"prev_action\": {\"action_name\": \"utter_give_recommendations\"}, \"user\": {\"intent\": \"recommendations\"}}, {\"prev_action\": {\"action_name\": \"action_give_recommendations\"}, \"user\": {\"intent\": \"recommendations\"}}, {\"prev_action\": {\"action_name\": \"action_send_response\"}, \"user\": {\"intent\": \"recommendations\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]": "utter_greet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_start\"}}]": "utter_starting_point",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_start\"}}, {\"prev_action\": {\"action_name\": \"utter_starting_point\"}, \"user\": {\"intent\": \"ask_start\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}]": "action_cari_data",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_cari_data\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}]": "action_analyze_sentiment",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_cari_data\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_analyze_sentiment\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}]": "action_visualisasi",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_cari_data\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_analyze_sentiment\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_visualisasi\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}]": "action_send_response",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_cari_data\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_analyze_sentiment\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_visualisasi\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_send_response\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent back",
+      "predicting default action with intent session_start",
+      "predicting default action with intent restart"
+    ]
+  }
+}

@@ -32,16 +32,19 @@ class ActionCariData(Action):
         return "action_cari_data"
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        topic = tracker.get_slot("topic")
-        dispatcher.utter_message(text = f"Mencari data untuk topik {topic}...")
-        return []
+        topic = next(tracker.get_latest_entity_values("topic"), None)
+        if topic:
+            dispatcher.utter_message(text = f"Mencari data untuk topik {topic}...")
+        else:
+            dispatcher.utter_message(text="Entitas 'topic' tidak dikenali.")
+        return [SlotSet("topic", topic)]
 
 class Sentimen(Action):
     def name(self) -> str:
         return "action_analyze_sentiment"
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        topic = tracker.get_slot("topic")
+        topic = next(tracker.get_latest_entity_values("topic"), None)
 
         # dispatcher.utter_message(template="utter_analyze_sentiment")
         dispatcher.utter_message(text = f"Berikut adalah hasil analisis sentimen untuk topik {topic}")
@@ -52,19 +55,19 @@ class Visualisasi(Action):
         return "action_visualisasi"
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        topic = tracker.get_slot("topic")
+        topic = next(tracker.get_latest_entity_values("topic"), None)
         dispatcher.utter_message(text = f"Melakukan visualisasi untuk hasil analisis sentimen topik {topic}")
-        return []
+        return [SlotSet("topic", topic)]
 
 class Rekomendasi(Action):
     def name(self) -> str:
         return "action_give_recommendations"
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        topic = tracker.get_slot("topic")
+        topic = next(tracker.get_latest_entity_values("topic"), None)
         sentiment_analysis = tracker.get_slot("sentiment_analysis")
         dispatcher.utter_message(text = f"Berikut adalah rekomendasi untuk topik {topic}")
-        return []
+        return [SlotSet("topic", topic)]
 
 class SendResponse(Action):
     def name(self) -> str:

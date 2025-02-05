@@ -14,12 +14,6 @@ entities:
   - date
 
 slots:
-  # data:
-  #   type: any
-  #   mappings:
-  #   - type: custom
-  #     action: action_cari_data
-
   topic:
     type: text
     mappings:
@@ -44,10 +38,10 @@ responses:
   - text: "Kita bisa mulai dengan analisis sentimen. Kategori apa yang ingin dianalisis? (teknologi, kuliner, fashion, lifestyle, properti, transportasi)"
 
   utter_analyze_sentiment:
-  - text: "Berikut adalah hasil analisis sentimen:"
+  - text: "Berikut adalah hasil analisis sentimen untuk kategori {topic}:"
 
   utter_give_recommendations:
-  - text: "Berikut adalah beberapa rekomendasi yang dapat saya berikan:"
+  - text: "Berikut adalah beberapa rekomendasi yang dapat saya berikan untuk kategori {topic}:"
 
   utter_without_sentiment:
   - text: "Maaf, Anda harus melakukan analisis sentimen terlebih dahulu untuk mendapatkan rekomendasi."

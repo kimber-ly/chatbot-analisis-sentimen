@@ -42,11 +42,11 @@ nlu:
 
 - intent: recommendations
   examples: |
-    - berikan rekomendasi ide bisnis
-    - tolong berikan rekomendasi strategi pemasaran
-    - apa saja ide bisnis yang bagus?
-    - bagaimana strategi pemasarannya?
-    - tolong berikan beberapa strategi pemasaran
+    - berikan rekomendasi ide bisnis [kuliner](topic)
+    - tolong berikan rekomendasi strategi pemasaran [properti](topic)
+    - apa saja ide bisnis yang bagus di kategori [teknologi](topic)?
+    - bagaimana strategi pemasaran [lifestyle](topic)?
+    - tolong berikan beberapa strategi pemasaran [fashion](topic)
 
 - intent: goodbye
   examples: |
